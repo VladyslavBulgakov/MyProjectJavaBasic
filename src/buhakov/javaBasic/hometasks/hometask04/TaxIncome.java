@@ -17,7 +17,7 @@ public class TaxIncome {
 
         if (income <= 10000) {
             taxResult = (income * lowTaxRate) / 100;
-        } else if (income > 10001 && income <= 25000){
+        } else if (income >= 10001 && income <= 25000){
             taxResult = (income * midTaxRate) / 100;
         } else {
             taxResult = (income * highTaxRate) / 100;
@@ -26,7 +26,6 @@ public class TaxIncome {
         clearIncome = income - taxResult;
         System.out.println("Your tax amount of " + income + " is " + taxResult + "." +
                 "\nYour clear income is: " + clearIncome + ".");
-
         sc.close();
     }
 }
