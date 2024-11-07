@@ -16,14 +16,14 @@ public class TaxIncome {
         double highTaxRate = 6.7;
 
         if (income <= 10000) {
-            taxResult = (income * lowTaxRate) / 100;
+            taxResult = Math.round(income * lowTaxRate) / 100.00;
         } else if (income <= 25000){
-            taxResult = (income * midTaxRate) / 100;
+            taxResult = Math.round(income * midTaxRate) / 100.00;
         } else {
-            taxResult = (income * highTaxRate) / 100;
+            taxResult = Math.round(income * highTaxRate) / 100.00;
         }
 
-        clearIncome = income - taxResult;
+        clearIncome = Math.round((income - taxResult) * 100) / 100.00;
         System.out.println("Your tax amount of " + income + " is " + taxResult + "." +
                 "\nYour clear income is: " + clearIncome + ".");
         sc.close();
